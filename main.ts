@@ -1,36 +1,61 @@
-import { ArrayService } from "./app-service";
+import {StringManipulationService } from "./app-service";
 
-export class ArrayComponent implements ArrayService {
+export class ArrayManipulations implements StringManipulationService {
 
-    constructor() {}
+   
+      arrayFindMultiples(myArray: any) 
+      {
+         for(let i=0;i<myArray.length;i++)
+         {
+            if(myArray[i]%5==0 || myArray[i]%10==0)
+            {
+               console.log(myArray[i]);
+            }
+         }
+      }
 
-    public arrayMultiply(myArray: number[]) : Array<Number> {
-      
-    }
+      arraySeparate(myArray : any)
+      {
+         for(let i1=0;i1<myArray.length;i1++)
+         {
+            if(isNaN(myArray[i1]))
+            {
+               console.log(myArray[i1]);
+            }
+         }
+      }
+      arraySplit(myString : string)
+      {
+         for(let i2=0;i2<myString.length;i2++)
+         {
+            
+         }
+      }
+      arraySort(myArray : any) 
+      {
+         myArray.sort();
+         console.log(myArray);
+      }
+      arrayReplace(myArray : any)
 
-    public arraySeparate(myArray: any) : Array<string>{
-        
-    }
+      {
+         for(let i4=0;i4<myArray.length;i4++)
+         {
+            if(myArray[i4]%3==0)
+            {
+               myArray[i4]=5;
+            }
+            console.log(myArray[i4]);
+         }
+         
+      }
+   }
 
-    public arraySplit(str:string) : Array<number>{
-
-    }
-
-    public arraySort(myArray:any):Array<string>{
-      
-    }
-
-    public arrayReplace(myArray:any):Array<number>{
-       
-}
-
-let myArray: number[] = [34, 45, 60, 23, 13, 25, 70];
-let array = new ArrayComponent();
-
-console.log(array.arrayMultiply(myArray));
-console.log(array.arraySeparate(myArray));
-console.log(array.arraySort(myArray));
-console.log(array.arrayReplace(myArray));
-
+var myArray: any[] = [34, 45, 60, 23, 13, 25, 70,"467","1224","hii","prograd","hello"];
+let array = new ArrayManipulations();
+array.arrayFindMultiples(myArray);
+array.arraySeparate(myArray);
+array.arraySort(myArray);
+array.arrayReplace(myArray);
 
 
